@@ -1,7 +1,8 @@
 from turtle import Screen, Turtle  
 # turtle 은 모듈, Turtle 은 클래스
-import time
 from snake import Snake
+import time
+
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -10,6 +11,12 @@ screen.title("My Snake Game")
 screen.tracer(0) #프로그램을 실행에도 아무동작도 하지 않음 (update 메소드를 호출하지 않는 한 화면을 갱신하지 않기 때문에)
 
 snake = Snake() #Snake 클래스의 변수를 만들어줌. (초기화됨)
+
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
 game_is_on = True #게임이 동작하는 지 결정
 
