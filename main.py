@@ -27,7 +27,7 @@ while game_is_on:
     for seg in segments:
         seg.forward(20)  #거북이 배열이 하나씩 앞으로(오른쪽으로) 20씩 움직임 
            
-
+    segments[0].left(20) #거북이의 첫번째 세그먼트를 왼쪽으로 20만큼 돌림
 
 
 
