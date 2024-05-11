@@ -1,5 +1,5 @@
 from turtle import Screen, Turtle  
-
+import time
 # turtle 은 모듈, Turtle 은 클래스
 
 screen = Screen()
@@ -22,11 +22,12 @@ for position in starting_position:
 game_is_on = True #게임이 동작하는 지 결정
 
 while game_is_on:
+    screen.update()    #모든 세그먼트가 이동한 후 화면이 갱신됨
+    time.sleep(0.1)    #모든 세그먼트가 이동한 후 시간 지연(좀더 빨라짐 -> 더빠르게 는 0.1로)
     for seg in segments:
         seg.forward(20)  #거북이 배열이 하나씩 앞으로(오른쪽으로) 20씩 움직임 
-        seg.update()
-        seg.sleep(1)    #세그먼트가 이동하고 나서 1초 지연이 걸림
-            
+           
+
 
 
 
