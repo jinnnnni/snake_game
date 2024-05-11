@@ -6,7 +6,7 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("My Snake Game")
-
+screen.tracer(0) #프로그램을 실행에도 아무동작도 하지 않음 (update 메소드를 호출하지 않는 한 화면을 갱신하지 않기 때문에)
 starting_position = [(0, 0), (-20, 0), (-40, 0)]
 #튜플
 segments=[]
@@ -24,7 +24,9 @@ game_is_on = True #게임이 동작하는 지 결정
 while game_is_on:
     for seg in segments:
         seg.forward(20)  #거북이 배열이 하나씩 앞으로(오른쪽으로) 20씩 움직임 
-
+        seg.update()
+        seg.sleep(1)    #세그먼트가 이동하고 나서 1초 지연이 걸림
+            
 
 
 
